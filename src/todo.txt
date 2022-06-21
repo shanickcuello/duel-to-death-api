@@ -1,0 +1,26 @@
+Requerimientos:
+
+Como usuario recibiré un userId único cuando abro la app para poder jugar contra otro.
+
+Como usuario quiero entrar a mi videojuego y crear una partida para jugar con alguien.
+Para eso usaré un endpoint que me permita crear una partida y me devuelva un id.
+Por ejemplo /api/game responderá "af65nj"
+
+Como jugador quiero poder unirme a partidas. Para ello debo poder ingresar un codigo en el juego para poder unirme.
+Por ejempplo /api/game/af65nj
+Si ya hay 2 jugadores en la partida recibiré un mensaje como "el juego esta completo"
+
+Jugando tengo que poder disparar a la cuenta de 3 y saber quien gano el duelo. Para que el server funcione como arbitro recibirá el tiempo que tardó en realizar el disparo
+por ejemplo
+/api/shoot
+{
+    "userId" : "568451515784"
+    "gameId" : "af65jn",
+    "shootSpeed" : "0,33"
+}
+
+Este nos devolverá si ganamos o no. Ya que antes de que pasen X segundos deberia recibir el disparo del otro jugador.
+
+{
+    "win" : "true"
+}
