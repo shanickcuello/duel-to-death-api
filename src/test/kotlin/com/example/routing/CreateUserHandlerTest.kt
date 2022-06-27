@@ -19,7 +19,6 @@ class CreateUserHandlerTest{
         }
         client.get("/user").apply {
             assertEquals(HttpStatusCode.OK, status)
-            assertEquals("User created", bodyAsText())
         }
     }
 }
